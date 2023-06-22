@@ -1,2 +1,2 @@
 # frontEx
-HTML 연습 과정입니다.
+HTML 연습장입니다.
