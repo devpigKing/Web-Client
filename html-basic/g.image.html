@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML Image</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
     <img src="images/jeju.png" width="300" height="300">
@@ -15,5 +16,12 @@
     <a href="http://www.naver.com">
         <img src="images/naver.jpg">
     </a>
+    <br>
+
+    <picture>
+        <source media="(min-width: 650px)" srcset="images/jeju">
+        <source media="(min-width: 650px)" srcset="images/jeju">
+
+    </picture>
 </body>
 </html>
