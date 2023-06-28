@@ -5,6 +5,8 @@
     <title>입력요소와 폼</title>
 </head>
 <body>
+    <!-- #을 하면 id 붙여서 자기 자신으로 -->
+    <form action="#" method="post">
     <table border="1" width="600" align="center">
         <caption style="font-size: 20pt; margin-bottom: 20px;">회원가입정보</caption>
         <tr style="height: 40px;">
@@ -74,6 +76,29 @@
 
             </td>
         </tr>
+
+        <tr style="height: 40px;">
+            <th style="width: 150px;">프로필사진</th>
+                <td>
+                    <!-- accept는 특정 종류의 파일만 입력 받을 수 있게 해줌. -->
+                    <input type="file" name="picture" multiple accept="image/png"> 
+                </td>
+    
+        </tr>
+    
+        <tr style="height: 40px;">
+            <th style="width: 150px;">가입인사</th>
+                <td>
+                    <textarea name="greetings" rows="5" cols="50" style="resize: none;"></textarea>
+                </td>
+    
+        </tr>
+
+        <tr style="width: 400px;" align="center">
+            <td colspan="2"><input type="submit" value="가입하기"></td> <!-- submit : 서버로 form(입력 데이터) 전송-->
+            <!-- <td></td> -->
+        </tr>
     </table>
+    </form>
 </body>
 </html>
