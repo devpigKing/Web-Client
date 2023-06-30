@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>반복문 - 계산기 만들기(switch문) </title>
+</head>
+<body>
+    
+
+    <script>
+        // 계산기
+        // 1. 숫자를 입력 받는다.
+        // 2. 연산자(+, -, *, /)를 입력 받는다.
+        // 3. 숫자를 입력 받는다.
+        // 4. 각 값을 변수에 저장 => 입력한 값 출력, 두 값을 더하기 한 값 출력
+        // 5. 사용자가 입력한 연산자에 따라 연산 수행하고 변수에 저장
+        // 6. 연산 결과를 출력한다.
+
+        let num1 = window.prompt('첫번째 숫자를 입력해주세요 : ');
+        const oper = window.prompt('연산자를 입력해주세요 [+, -, *, /] : ');
+        let num2 = window.prompt('두번째 숫자를 입력하세요 : ');
+
+        // num1 = Number(num1);
+        // num2 = Number(num2);
+
+        num1 = parseInt(num1); // parseInt(문자열) => 문자열을 정수(Int)로 변환
+        num2 = parseInt(num2); 
+
+        console.log(num1);
+        console.log(oper);
+        console.log(num2);
+        console.log(num1+num2);
+
+
+        switch(oper) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                result = num1 / num2;
+                break;
+            case '%':
+                result = num1 % num2;
+                break;
+
+            default: result = "잘못된 연산자를 입력하셨어요~ 다시 해";
+
+        }
+
+        alert(result);
+
+
+    </script>
+</body>
+</html>
