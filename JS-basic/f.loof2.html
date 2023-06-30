@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>반복문 - 계산기 만들기</title>
+</head>
+<body>
+    
+
+    <script>
+        // 계산기
+        // 1. 숫자를 입력 받는다.
+        // 2. 연산자(+, -, *, /)를 입력 받는다.
+        // 3. 숫자를 입력 받는다.
+        // 4. 각 값을 변수에 저장 => 입력한 값 출력, 두 값을 더하기 한 값 출력
+        // 5. 사용자가 입력한 연산자에 따라 연산 수행하고 변수에 저장
+        // 6. 연산 결과를 출력한다.
+
+        let num1 = window.prompt('첫번째 숫자를 입력해주세요 : ');
+        let oper = window.prompt('연산자를 입력해주세요 : ');
+        let num2 = window.prompt('두번째 숫자를 입력하세요 : ');
+
+        num1 = Number(num1);
+        num2 = Number(num2);
+
+        alert(num1);
+        alert(oper);
+        alert(num2);
+    
+        alert(num1 + num2);
+
+
+        if (oper=='+') {
+            let sum = num1 + num2;
+            alert(num1 + '+' + num2 + '=' + sum);
+        } else if (oper == '-') {
+            let minus = num1 - num2;
+            alert(num1 + '-' + num2 + '=' + minus);
+        } else if (oper == '*') {
+            let cat = num1*num2;
+            alert(num1 + '*' + num2 + '=' + cat);
+        } else if (oper == '/') {
+            let div = num1 / num2;
+            alert(num1 + '/' + num2 + '=' + div);
+        }
+
+
+
+    </script>
+</body>
+</html>
