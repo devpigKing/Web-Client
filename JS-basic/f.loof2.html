@@ -17,11 +17,14 @@
         // 6. 연산 결과를 출력한다.
 
         let num1 = window.prompt('첫번째 숫자를 입력해주세요 : ');
-        let oper = window.prompt('연산자를 입력해주세요 [+, -, *, /] : ');
+        const oper = window.prompt('연산자를 입력해주세요 [+, -, *, /] : ');
         let num2 = window.prompt('두번째 숫자를 입력하세요 : ');
 
-        num1 = Number(num1);
-        num2 = Number(num2);
+        // num1 = Number(num1);
+        // num2 = Number(num2);
+
+        num1 = parseInt(num1); // parseInt(문자열) => 문자열을 정수(Int)로 변환
+        num2 = parseInt(num2); 
 
         alert(num1);
         alert(oper);
@@ -46,7 +49,9 @@
         } else if (oper == '/') {
             let div = num1 / num2;
             alert(num1 + '/' + num2 + '=' + div);
-        } 
+        } else {
+            alert('잘못된 연산자를 입력하셨어요~ 다시 해')
+        }
 
 
 
