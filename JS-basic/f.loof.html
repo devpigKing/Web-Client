@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>반복문</title>
+</head>
+<body>
+    
+
+    <script>
+        // 숫자 입력 -> 짝수이면 출력, 홀수이면 (if else)
+        const num1 = window.prompt("정수를 입력해주세요 : "); 
+
+        if (num1%2==0) {
+            alert('짝수입니다~~');
+        } else {
+            alert('집에가!');
+        }
+
+
+        // 숫자 입력 -> 0보다 크면 메시지 출력 (if else if else)
+
+        const num2 = window.prompt("숫자를 입력하세요 : ");
+
+        if(num2 > 0) {
+            alert('0보다 큰 숫자입니다.');
+        } else if ( num2 < 0 ){
+            alert('그게 0보다 크냐');
+        } else {  // 위의 모든 조건에 해당하지 않는 나머지 모든 경우
+            alert(0);
+        }
+
+
+
+    </script>
+</body>
+</html>
