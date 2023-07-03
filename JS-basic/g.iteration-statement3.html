@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> 성적 등급 계산기 </title>
+</head>
+<body>
+    
+    <script>
+        // 성적 등급 계산
+        // 1. 점수 3개 입력(window.prompt) -> 변수에 저장 -> 정수형으로 바꿈
+        // 2. 총점과 평균 계산 -> 변수에 저장
+        // 3. 평균 점수 기준 등급 계산
+        // 4. 90 ~ 100은 A, 80 ~ 89는 B, ..., 60점 미만은 F
+        // 5. 출력
+
+        let sub1 = 0;
+        do {
+            sub1 = window.prompt('첫 번째 과목 점수를 입력하시오 : ');
+            sub1 = parseInt(sub1);
+            
+            } while(sub1 < 0 || sub1 > 100); // 입력 오류
+
+        let sub2 = window.prompt('두 번째 과목 점수를 입력하시오 : ');
+        sub2 = parseInt(sub2);
+
+        let sub3 = window.prompt('세 번째 과목 점수를 입력하시오 : ');
+        sub3 = parseInt(sub3);
+
+
+        let total = sub1 + sub2 + sub3;
+        console.log(total);
+        let avg = total/3;
+        console.log(avg);
+
+        if(90 <= avg && avg <= 100) {  // && 둘다 참이면 true고, 아니면 false
+            alert('평균' + avg + ', A입니다.');
+        } else if ( 80 <= avg ) {
+            alert('평균' + avg + ', B입니다.');
+        } else if ( 70 <= avg) {
+            alert('평균' + avg + ', C입니다.');
+        } else if ( 60 <= avg ) {
+            alert('평균' + avg + ', D입니다.');
+        } else {
+            alert('평균' + avg + ', F입니다.');
+        }
+
+    </script>
+</body>
+</html>
