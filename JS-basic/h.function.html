@@ -10,23 +10,26 @@
     <script>
 
 
+        function drawBox() {
+            // *로 가로 20, 세로 20개 짜리 박스를 해보자.
+            document.write("<table>");
 
-        // *로 가로 20, 세로 20개 짜리 박스를 해보자.
-        document.write("<table>");
-
-        for (let row = 0; row < 10; row++) {
-            document.write("<tr>");
-            for(let column = 0; column < 20; column++) {
-                if(0 == column || column == 19 || row == 0 || row == 9) {
-                    document.write("<td>*</td>")
-                } else {
-                    document.write("<td> </td>");
+            for (let row = 0; row < 10; row++) {
+                document.write("<tr>");
+                for(let column = 0; column < 20; column++) {
+                    if(0 == column || column == 19 || row == 0 || row == 9) {
+                        document.write("<td>*</td>")
+                    } else {
+                        document.write("<td> </td>");
+                    }
                 }
+                document.write("</tr>");
             }
-            document.write("</tr>");
+            document.write("</table>");
         }
-        document.write("</table>");
-        
+
+        drawBox(); // 함수 호출 
+
     </script>
 </body>
 </html>
