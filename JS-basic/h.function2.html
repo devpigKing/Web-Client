@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> 구구단 </title>
+    
+</head>
+<body>
+
+    <script>
+
+
+        function drawBox(c, width, height) { // c : 파라미터(parameter) : 전달인자
+            // *로 가로 20, 세로 20개 짜리 박스를 해보자.
+            document.write("<table>");
+
+            for (let row = 0; row < height; row++) {
+                document.write("<tr>");
+                for(let column = 0; column < width; column++) {
+                    if(0 == column || column == width-1 || row == 0 || row == height-1) {
+                        document.write("<td>" + c + "</td>")
+                    } else {
+                        document.write("<td> </td>");
+                    }
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+
+        drawBox("#", 30, 5); // 함수 호출 
+        drawBox("$", 40, 10);
+    </script>
+</body>
+</html>
