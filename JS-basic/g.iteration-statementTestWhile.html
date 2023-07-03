@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> 구구단 (While) </title>
+    
+</head>
+<body>
+    <h1 style="text-align: center;">구구단!</h1>
+
+    <script>
+        // 1. 사용자 입력(2 ~ 9)
+        // 2. 변수에 저장
+        // 3. 숫자에 저장
+        // 4. 사용자가 입력한 숫자에 해당하는 구구단 출력(단 테이블 형식으로, while, for)
+        // 5. 1단 ~ 9단 구구단 출력
+
+        let num = window.prompt("숫자를 입력하세요(2~9) : ");
+        num = parseInt(num);
+
+        let row = 1;
+        document.write("<table border='1' width='100'>");
+            while(row < 10) {
+                document.write("<tr>");
+                document.write("<th>" + num + "X" + row + "=" + (num*row) + "</th>");
+                document.write("</tr>");
+            }
+            document.write("</table>");
+
+    
+
+        // 1단 ~ 9단 출력
+        document.write("<table border='1' width='200' align='center'>");
+        document.write("<tr>");
+        for(let i = 1; i < 10; i++) {
+            document.write("<th>" + i + "단</th>")
+        }
+        document.write("</tr>");
+        document.write("<tr>");
+        for(let i = 1; i <10; i++) {
+            for(let j = 1; j < 10; j++) {
+                document.write("<td>" + j + "*" + i + "=" + (i*j) + "</td>")
+            }
+
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+
+
+    </script>
+</body>
+</html>
