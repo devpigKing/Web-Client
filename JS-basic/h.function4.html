@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> 여러가지 형태의 함수 사용법 </title>
+    
+</head>
+<body>
+
+    <script>
+
+
+        function addValues(v1, v2) {
+            const result = v1 + v2;
+            return result;  
+        }
+
+        const myAddValues = addValues; // 함수를 변수에 저장할 수 있다.(저장 후에는 변수를 함수처럼 사용할 수 있다.)
+
+        const addResult = addValues(10, 20);
+        alert(addResult);
+        const addResult2 = myAddValues(10, 20);
+        alert(addResult2);
+
+
+        // 익명 함수.
+        const multiplyValues = function (v1, v2) {
+            const result = v1 * v2;
+            return result;
+
+        }
+
+        alert(multiplyValues(10,20));
+
+        // 화살표 함수
+        const multiplyValues2 = (v1, v2) => v1 * v2;
+        alert(multiplyValues2(10,30));
+        
+    </script>
+</body>
+</html>
