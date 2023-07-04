@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>이벤트</title>
-</head>
-<body>
-    <button onclick="click_event()">click me</button>
-    
     <script>
         var n = 0;
 
@@ -14,6 +10,33 @@
             n++;
             alert(n + "번 클릭하였습니다.");
         }
+
+        function mouseOverHandler() {
+            console.log("마우스가 div 위에서 움직이고 있습니다.");
+        }
+
+        function mouseOutHandler() {
+            console.log("마우스가 div 밖으로 나갔다~");
+        }
+
+        function onClick() {
+            alert("첫 번째 이벤트");
+        }
+
+        function onClick2() {
+            alert("두 번째 이벤트");
+        }
+
+        document.getElementById('clickMe').addEventListener('click', onClick);
+        document.getElementById('clickMe').addEventListener('click', onClick2);
     </script>
+</head>
+<body>
+
+    <button id="clickMe">click me</button>
+    <hr>
+    <div style="width: 200px; height: 200px; border: solid 1px;" 
+    onmouseout="mouseOutHandler()" onmouseover="mouseOverHandler()"></div>
+    
 </body>
 </html>
