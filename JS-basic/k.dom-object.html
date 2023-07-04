@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom Object</title>
+</head>
+<body>
+    <button id="btn1">1~100 사이의 난수를 보여주세요.</button>
+    <hr>
+    <div id="msg1"></div>
+    
+    <script>
+        // button을 클릭하면 div에 난수 표시
+        // 1. button 객체와 div 객체 찾기 => 변수에 저장
+        // const button = document.querySelector("button");  // 태그 이름으로 요소 찾기
+        // const div = document.querySelector("div");
+        const button = document.querySelector("#btn1");  // 태그 id 속성으로 요소 찾기
+        const div = document.querySelector("#msg1");
+
+        // 2. button 객체의 click 이벤트에 함수 연결
+        button.onclick = function(event) {
+            // 3. 함수의 내용으로 난수를 뽑아서 div에 객체에 표시
+            let randomNum = Math.random(100);     
+            randomNum = randomNum*99;
+            randomNum = randomNum+1; 
+            randomNum = Math.floor(randomNum);
+
+            div.innerHTML = "당신의 행운의 숫자는 " + randomNum + " 입니다.";
+
+            console.log(randomNum);
+        }
+
+        
+
+
+
+    </script>
+
+</body>
+</html>
