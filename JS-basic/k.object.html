@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+</head>
+<body>
+    
+    <script>
+        let person = {
+            name : "dotori",
+            email : "dotodiary@gmail.com",
+            gender : "male",
+            toString : function() { console.log("toString"); },
+            getEmail : function() { console.log("getEmail"); }
+        }
+
+        // 객체 사용
+        document.write("name : " + person.name);
+        document.write("<br>");
+        document.write("email : " + person.email);
+        document.write("<br>");
+        person.toString();
+
+
+        //////////////////////////////////////////////////////////
+        var person2 = {
+            "name" : "도토리",
+            "address" : "서울특별시 양천구",
+            "age" : 28,
+            "phone" : {
+                "mobile" : "010-1234-5678",
+                "office" : "02-9876-5432"
+            }
+        };
+
+        console.log(person2.name);
+        console.log(person2.address);
+        console.log(person2.age);
+        console.log(person2.phone.mobile);
+        console.log(person2.phone.office);
+    </script>
+
+</body>
+</html>
