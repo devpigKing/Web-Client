@@ -5,28 +5,25 @@
     <title>Dom Object</title>
 </head>
 <body>
+    <table>
+        <tr>
+            <td><input type="number" id="input1"></td>
+            <td>
+                <button id="btn1">원 => $</button>
+                <br>
+                <button id="btn2">$ &lt;- 원</button>
+            </td>
+            <td><input type="number" id="input2"></td>
+        </tr>
+    </table>
 
-    <h2>원 => $</h2>
     
-    <input type="number" id="input1">
-    <button id="btn1">원 => $</button>
-    <input type="number" id="input2">
-
-    <hr>
-
-    <h2>$ => 원</h2>
-
-    <input type="number" id="input3">
-    <button id="btn2">$ => 원</button>
-    <input type="number" id="input4">
 
     <script>
         
         const input1 = document.querySelector("#input1");
         const button1 = document.querySelector("#btn1");
         const input2 = document.querySelector('#input2');
-        const input3 = document.querySelector('#input3');
-        const input4 = document.querySelector('#input4');
         const button2 = document.querySelector('#btn2');
 
 
@@ -44,9 +41,9 @@
         button2.onclick = function(event) {
             // 달러에 1300을 곱하면 원이 된다.
 
-            let money = input3.value*1300;
+            let money = input2.value*1300;
 
-            input4.value = money;
+            input1.value = money;
             console.log(money);
         }
         
