@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom Object</title>
+    <style>
+        #btn1 { width: 100%; height: 35px;}
+        #btnSelect { width: 100%; height: 35px;}
+        h1 { text-align: center; }
+        input { width: 30px; height: 30px; text-align: center;}
+    </style>
+</head>
+<body>
+
+    <h1>복권 당첨기</h1>
+    <hr>
+
+    <!-- <button id="btn">당첨 예상 번호 뽑기</button> -->
+    <table>
+        <tr>
+            <td colspan="6">
+                <button id="btnSelect"> 당첨 예상 번호 뽑기(중복 제거) </button>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="text" id="input1" placeholder="1" readonly></td>
+            <td><input type="text" id="input2" placeholder="2" readonly></td>
+            <td><input type="text" id="input3" placeholder="3" readonly></td>
+            <td><input type="text" id="input4" placeholder="4" readonly></td>
+            <td><input type="text" id="input5" placeholder="5" readonly></td>
+            <td><input type="text" id="input6" placeholder="6" readonly></td>
+        </tr>
+    </table>
+
+    
+
+    <script>
+        const btnSelect = document.querySelector('#btnSelect');
+        const num = [0, 0, 0, 0, 0, 0];
+
+        for(let i = 0; i < num.length; i++) {
+            const input = document.querySelector('#input' + (i+1) );
+            num[i] = input; 
+        }
+        
+
+        btnSelect.onclick = function(event) {
+            
+            for(let i = 1; i < 7; i++) {
+
+                let num = 0;
+
+                // 리팩토링
+                num = Math.random()*45;
+                num = Math.floor(num)+1;
+                input[i].value = num;
+            }
+
+        }
+        
+    </script>
+</body>
+</html>
