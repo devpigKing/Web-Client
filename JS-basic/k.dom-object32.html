@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom Object</title>
+    <style>
+        #btn1 { width: 100%; height: 35px;}
+        #btnSelect { width: 100%; height: 35px;}
+        h1 { text-align: center; }
+        input { width: 30px; height: 30px; text-align: center;}
+    </style>
+</head>
+<body>
+
+    <h1>복권 당첨기</h1>
+    <hr>
+
+    <!-- <button id="btn">당첨 예상 번호 뽑기</button> -->
+    <table>
+        <tr>
+            <td colspan="6">
+                <button id="btn1">당첨 예상 번호 뽑기(중복 허용)</button>
+                <br>
+                <button id="btnSelect"> 당첨 예상 번호 뽑기(중복 제거) </button>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="text" id="input1" placeholder="1" readonly></td>
+            <td><input type="text" id="input2" placeholder="2" readonly></td>
+            <td><input type="text" id="input3" placeholder="3" readonly></td>
+            <td><input type="text" id="input4" placeholder="4" readonly></td>
+            <td><input type="text" id="input5" placeholder="5" readonly></td>
+            <td><input type="text" id="input6" placeholder="6" readonly></td>
+        </tr>
+    </table>
+
+    
+
+    <script>
+        const button1 = document.querySelector('#btn1');
+        const btnSelect = document.querySelector('#btnSelect');
+
+        
+
+        
+
+        // 중복 제거
+        button1.onclick = function(event) {
+            let arr = [0, 0, 0, 0, 0, 0];
+            
+            for(let i=0; i < arr.length; i++) {
+                let randomNum = 0;
+                randomNum = Math.random()*45; // 0 ~ 45(미포함) 부동 소수점
+                randomNum = randomNum+1;
+                randomNum = Math.floor(randomNum); // 1 ~ 46(미포함) 정수
+
+                arr[i] = randomNum;
+                
+                console.log(arr[i]);
+                
+
+            }   
+            input1.value = arr[0];
+            input2.value = arr[1];
+            input3.value = arr[2];
+            input4.value = arr[3];
+            input5.value = arr[4];
+            input6.value = arr[5];
+            
+        }
+
+        btnSelect.onclick = function(event) {
+            
+            for(let i = 1; i < 7; i++) {
+
+                const input = document.querySelector('#input' + i);
+                let num = 0;
+
+                // 리팩토링
+                num = Math.random()*45;
+                num = Math.floor(num)+1;
+                input.value = num;
+
+            }
+
+        }
+        
+    </script>
+</body>
+</html>
