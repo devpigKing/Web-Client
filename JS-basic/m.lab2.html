@@ -51,14 +51,14 @@
             <td><img id="img9"></td>
         </tr>
         <tr id="display_row">
-            <td></td>
+            <td><button id="btnPre">이전</button></td>
             <td colspan="8"><img id="current_img"></td>
-            <td></td>
+            <td><button id="btnNext">다음</button></td>
+        </td>
         </tr>
     </table>
 
     <script>
-        const div = document.querySelector('#picture');
         const image_name = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
         // const imgs = document.querySelectorAll('img[^=img]')
         const imgs = document.querySelectorAll('#list_row img');  // img 태그에서 id가 img인 모든 걸 가져와
@@ -78,7 +78,19 @@
             imgs[i].src = 'images/slide/' + image_name[i] + '.jpg';
         }
 
+        //////////////////////////
 
+        let current_idx = 0;
+
+        const btnPre = document.querySelector("#btnPre");
+        btnPre.onclick = function(event) {
+            let pre_idx = current_idx - 1;
+            if (pre_idx < 0) {
+                pre_idx = imgs.length - 1;
+            }
+            current_img.src = "images/slide/" + image_name[pre_idx] + ".jpg";
+            current_idx = pre_idx;
+        }
 
 
     </script>
