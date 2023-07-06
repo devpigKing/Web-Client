@@ -15,6 +15,9 @@
             border: solid 4px;
         }
 
+        table { width: 808px; margin: 0 auto; }
+        div { width: 800px; height: 300px; margin: 0 auto; border: solid 2px;}
+
     </style>
 </head>
 <body>
@@ -27,23 +30,35 @@
             <td id="blue" style="background-color: blue;"></td>
             <td id="navy" style="background-color: navy;"></td>
             <td id="purple" style="background-color: purple;"></td>
-            <td id="random">Random</td>
+            <td id="random"></td>
 
         </tr>
     </table>
+    <div id="canvas">
+        
+    </div>
 
     <script>
+        const div = document.querySelector("#canvas")
         // td 요소 찾기 + 변수에 저장 + 이벤트 처리기 연결
-        const tds = document.querySelectorAll('td'); // 해당하는 모든 요소 선택 -> 배열로 반환
-        for( let i=0; i<tds.length; i++) {
-            tds[i].onclick = function(id) { // event : 현재 발생한 이벤트 관련 정보를 가지고 있는 '객체'
+        function tdClickHandler(event) { // event : 현재 발생한 이벤트 관련 정보를 가지고 있는 '객체'
                 // 현재 이벤트가 발생한 객체
                 const td = event.target;
-                alert( td.id + " clicked !!");
-                console.log(td);
-            }
-        }
+                // 현재 클릭된 td의 배경색 읽기
+                const bg = td.style.backgroundColor;
+                alert(td.style.backgroundColor);
+                
+                console.log(bg);
+                // div의 배경색 변경
 
+                div.style.backgroundColor = bg;
+                
+            }
+
+        const tds = document.querySelectorAll('td'); // 해당하는 모든 요소 선택 -> 배열로 반환
+        for( let i=0; i<tds.length; i++) {
+            tds[i].onclick = tdClickHandler;
+        }
 
 
     </script>
