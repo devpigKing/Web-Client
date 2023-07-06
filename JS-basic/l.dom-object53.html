@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        #red {
+            background-color: red;
+        }
+
+        td { 
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            border: solid 4px;
+        }
+
+        table {
+            width: 808px;
+            margin: 0 auto;
+        }
+
+        div { 
+            width: 800px;
+            height: 300px; 
+            border: solid 2px; 
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;"> 신호등 건반 </h1>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="random"></td>
+        </tr>
+    </table>
+    <div id="div"></div>
+
+    <script>
+        // td 요소 찾기 + 변수에 저장 + 이벤트 처리기 연결
+        // const tds = document.querySelectorAll('td'); // 해당하는 모든 요소 선택 -> 배열로 반환
+        // for( let i=0; i<tds.length; i++) {
+        //     tds[i].onclick = function(id) { // event : 현재 발생한 이벤트 관련 정보를 가지고 있는 '객체'
+        //         // 현재 이벤트가 발생한 객체
+        //         const td = event.target;
+        //         alert( td.id + " clicked !!");
+        //         console.log(td);
+        //     }
+        // }
+
+        const div = document.querySelector("#div");
+
+
+        function tdClickHandler(event) { // event : 현재 발생한 이벤트 관련 정보를 가지고 있는 '객체'
+                // 현재 이벤트가 발생한 객체
+                const td = event.target;
+                const bg = td.style.backgroundColor;
+                console.log(bg);
+                
+                div.style.backgroundColor = bg;
+            }
+
+        const tds = document.querySelectorAll('td'); // 해당하는 모든 요소 선택 -> 배열로 반환
+        const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'navy', 'purple'];
+        for( let i=0; i<tds.length; i++) {
+            tds[i].onclick = tdClickHandler;
+            tds[i].style.backgroundColor = colors[i];
+        }
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>
