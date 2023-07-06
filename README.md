@@ -30,3 +30,10 @@ HTML 연습장입니다.
 ![image](https://github.com/devpigKing/Web-Client/assets/137087678/348e85e4-e24a-4d4a-9c1d-64cb2b0ed968)
 
 
+------------
+
+5. 신호등 건반(HTML + CSS + JS)
+------------
+![image](https://github.com/devpigKing/Web-Client/assets/137087678/35d9e923-95b6-46c5-a4ec-46763fbde06d)
+
+
