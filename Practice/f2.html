@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        td { 
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            border: solid 4px;
+        }
+
+        table {
+            width: 808px;
+            margin: 0 auto;
+        }
+
+        div { 
+            width: 800px;
+            height: 300px; 
+            border: solid 2px; 
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">신호등 건반</h1>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="random"></td>
+        </tr>
+    </table>
+    <div id="result"></div>
+
+
+    <script>
+        const div = document.querySelector('#result');
+        const tds = document.querySelectorAll('td');
+
+        function clickEvent(event) {
+            const td = event.target;
+            if (td.id == 'random') {
+                const r = Math.floor(Math.random()*256);
+                const g = Math.floor(Math.random()*256);
+                const b = Math.floor(Math.random()*256);
+                div.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+
+
+            } else {
+                const bg = td.style.backgroundColor;
+                div.style.backgroundColor = bg;
+            }
+        }
+
+        const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'navy', 'purple']
+        for(let i=0; i < tds.length; i++) {
+            tds[i].onclick = clickEvent;
+            tds[i].style.backgroundColor = colors[i];
+        }
+
+    </script>
+</body>
+</html>
