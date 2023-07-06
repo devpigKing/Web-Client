@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td id="red" style="width: 100px; height: 100px; background-color: red;"></td>
+            <td id="orange" style="width: 100px; height: 100px; background-color: orange;"></td>
+            <td id="yellow" style="width: 100px; height: 100px; background-color: yellow;"></td>
+            <td id="green" style="width: 100px; height: 100px; background-color: green;"></td>
+            <td id="blue" style="width: 100px; height: 100px; background-color: blue;"></td>
+            <td id="navy" style="width: 100px; height: 100px; background-color: navy;"></td>
+            <td id="purple" style="width: 100px; height: 100px; background-color: purple;"></td>
+            <td id="random">Random</td>
+        </tr>
+    </table>
+    <div id="area"></div>
+    
+
+    <script>
+        const red = document.querySelector("#red");
+        const orange = document.querySelector("#orange");
+        const yellow = document.querySelector("#yellow");
+        const green = document.querySelector("#green");
+        const blue = document.querySelector("#blue");
+        const navy = document.querySelector("#navy");
+        const purple = document.querySelector("#purple");
+        const div = document.querySelector("#area");
+
+
+
+        red.onclick = function(event) {
+            
+            alert("빨강 버튼을 눌렀네.");
+        }
+
+        orange.onclick = function(event) {
+            
+            alert("주황 버튼을 눌렀네.");
+        }
+
+        yellow.onclick = function(event) {
+            
+            alert("노랑 버튼을 눌렀네.");
+        }
+
+        green.onclick = function(event) {
+            
+            alert("초록 버튼을 눌렀네.");
+        }
+
+        blue.onclick = function(event) {
+            
+            alert("파랑 버튼을 눌렀네.");
+        }
+
+        navy.onclick = function(event) {
+            
+            alert("남색 버튼을 눌렀네.");
+        }
+
+        purple.onclick = function(event) {
+            
+            alert("보라 버튼을 눌렀네.");
+        }
+
+    </script>
+</body>
+</html>
