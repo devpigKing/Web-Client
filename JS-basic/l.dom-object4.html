@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="3">아래 가위/바위/보를 선택하면 게임이 시작된다.</td>
+        </tr>
+        <tr>
+            <td><img id="scissors" src="images/scissors.png" width="100px" height="100px">가위</td>
+            <td><img id="rock" src="images/rock.png" width="100px" height="100px">바위</td>
+            <td><img id="paper" src="images/paper.png" width="100px" height="100px">보</td>
+        </tr>
+        
+    </table>
+    <div id="result"></div>
+
+    <script>
+        const imgSci = document.querySelector("#scissors");
+        const imgRock = document.querySelector("#rock");
+        const imgPaper = document.querySelector("#paper");
+        const div = document.querySelector("#result");
+
+
+        imgSci.onclick = function(event) {
+            // alert('가위');
+            // 1. Random 숫자 뽑기 (0,1,2) : 0은 가위, 1은 바위, 2는보
+            // 2. 사용자 선택과 비교해서 승, 무, 패 결정 -> 변수에 저장
+            
+            let computer = Math.random()*3;
+            computer = Math.floor(computer);
+
+            if(computer == 0) {
+                let result = "무";
+                console.log(result);
+            } else if(computer == 1) {
+                let result = "패";
+                console.log(result);
+            } else {
+                let result = "승";
+                console.log(result);
+            }
+            
+            div.innerHTML = "You" + result;
+        }
+
+        imgRock.onclick = function(event) {
+            // alert('바위');
+            let computer = Math.random()*3;
+            computer = Math.floor(computer);
+
+            if(computer == 0) {
+                let result = "승";
+                console.log(result);
+            } else if(computer == 1) {
+                let result = "무";
+                console.log(result);
+            } else if(computer == 2) {
+                let result = "패";
+                console.log(result);
+            }
+            
+            div.innerHTML = "You" + result;
+
+        }
+
+        imgPaper.onclick = function(event) {
+            // alert('보');
+            let computer = Math.random()*3;
+            computer = Math.floor(computer);
+
+            if(computer == 0) {
+                let result = "패";
+                console.log(result);
+            } else if(computer == 1) {
+                let result = "승";
+                console.log(result);
+            } else if(computer == 2) {
+                let result = "무";
+                console.log(result);
+            }
+            
+            div.innerHTML = "You" + result;
+            
+        }
+
+        function checkResult(user) {
+            let computer = Math.random()*3;
+            computer = Math.floor(computer);
+            let result;
+            
+            if(user == 0) {
+
+                if(computer == 0) {
+                    result = "무";
+                    console.log(result);
+                } else if(computer == 1) {
+                    result = "패";
+                    console.log(result);
+                } else {
+                    result = "승";
+                    console.log(result);
+                }
+            } else if (user == 1) {
+
+                if(computer == 0) {
+                    result = "승";
+                    console.log(result);
+                } else if(computer == 1) {
+                    result = "무";
+                    console.log(result);
+                } else {
+                    result = "패";
+                    console.log(result);
+                }
+            } else {
+
+                if(computer == 0) {
+                    result = "패";
+                    console.log(result);
+                } else if(computer == 1) {
+                    result = "승";
+                    console.log(result);
+                } else {
+                    result = "무";
+                    console.log(result);
+                }
+            }
+            
+            div.innerHTML = "You" + result;
+        }
+        
+    </script>
+</body>
+</html>
