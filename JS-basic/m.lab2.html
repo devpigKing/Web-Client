@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab</title>
+    <style>
+        img { 
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            border: solid 4px;
+        }
+        table {
+            width: 808px;
+            margin: 0 auto; 
+        }
+
+        div { 
+            width: 800px;
+            height: 300px; 
+            border: solid 2px; 
+            margin: 0 auto;
+        }
+        #list_row img {
+            width: 100px;
+            height: 100px;
+            border: 1px;
+        }
+
+        #display_row img {
+            width: 100%;
+            height: 400px;
+            border: solid 2px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1 style="text-align: center;"> 슬라이드 연습 </h1>
+    <table>
+        <tr id="list_row">
+            <td><img id="img0"></td>
+            <td><img id="img1"></td>
+            <td><img id="img2"></td>
+            <td><img id="img3"></td>
+            <td><img id="img4"></td>
+            <td><img id="img5"></td>
+            <td><img id="img6"></td>
+            <td><img id="img7"></td>
+            <td><img id="img8"></td>
+            <td><img id="img9"></td>
+        </tr>
+        <tr id="display_row">
+            <td></td>
+            <td colspan="8"><img id="current_img"></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        const div = document.querySelector('#picture');
+        const image_name = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+        // const imgs = document.querySelectorAll('img[^=img]')
+        const imgs = document.querySelectorAll('#list_row img');  // img 태그에서 id가 img인 모든 걸 가져와
+        const current_img = document.querySelector("#current_img");
+
+
+
+        function slide(event) {
+            const img = event.target; // 이벤트에서 타겟을 가져와 img라는 변수를 저장
+            current_img.src = img.src;
+            
+        }
+
+
+        for(let i = 0; i<imgs.length; i++) {
+            imgs[i].onclick = slide;
+            imgs[i].src = 'images/slide/' + image_name[i] + '.jpg';
+        }
+
+
+
+
+    </script>
+</body>
+</html>
