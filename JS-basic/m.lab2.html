@@ -69,6 +69,7 @@
         function slide(event) {
             const img = event.target; // 이벤트에서 타겟을 가져와 img라는 변수를 저장
             current_img.src = img.src;
+            current_idx = parseInt(img.id);
             
         }
 
@@ -76,11 +77,13 @@
         for(let i = 0; i<imgs.length; i++) {
             imgs[i].onclick = slide;
             imgs[i].src = 'images/slide/' + image_name[i] + '.jpg';
+            imgs[i].id = i;
         }
 
         //////////////////////////
 
         let current_idx = 0;
+        current_img.src = "images/slide/" + image_name[current_idx] + ".jpg";
 
         const btnPre = document.querySelector("#btnPre");
         btnPre.onclick = function(event) {
@@ -91,6 +94,16 @@
             current_img.src = "images/slide/" + image_name[pre_idx] + ".jpg";
             current_idx = pre_idx;
         }
+
+        btnNext.onclick = function(event) {
+            let next_idx = current_idx + 1;
+            if(next_idx > imgs.length-1 ) {
+                next_idx = 0;
+            }
+            current_img.src = "images/slide/" + image_name[next_idx] + ".jpg";
+            current_idx = next_idx;
+        }
+
 
 
     </script>
