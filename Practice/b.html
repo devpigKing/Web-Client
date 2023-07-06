@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>달러 계산기</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><input type="text" id="input1"></td>
+            <td>
+                <button id="btn1">원 => $</button>
+                <br>
+                <button id="btn2">$ &lt;- 원</button>
+            </td>
+            <td><input type="text" id="input2"></td>
+        </tr>
+    </table>
+
+
+    <script>
+        const input1 = document.querySelector("#input1");
+        const btn1 = document.querySelector("#btn1");
+        const btn2 = document.querySelector("#btn2");
+        const input2 = document.querySelector("#input2");
+
+        btn1.onclick = function(event) {
+            let dollar = input1.value/1301;
+            dollar = Math.floor(dollar*100)/100;
+
+            input2.value = dollar;
+            
+            console.log(dollar);
+        }
+
+        btn2.onclick = function(event) {
+            let won = input2.value*1301;
+
+            input1.value = won;
+
+            console.log(won);
+        }
+
+    </script>
+    
+</body>
+</html>

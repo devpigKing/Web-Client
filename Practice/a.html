@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">1~100 사이의 난수를 보여주세요.</button>
+    <hr>
+    <div id="msg"></div>
+    <input type="text" id="input">
+
+    <script>
+        const btn = document.querySelector("#btn1");
+        const message = document.querySelector("#msg");
+        const input = document.querySelector("#input");
+
+        btn.onclick = function(event) {
+            let randomNo = Math.random()*100;
+            randomNo = Math.floor(randomNo) + 1;
+
+            msg.innerHTML = randomNo;
+            input.value = randomNo;
+
+            console.log(randomNo)
+        }
+
+        
+    </script>
+    
+</body>
+</html>
