@@ -28,3 +28,12 @@ HTML 연습장입니다.
 4. 가위 바위 보 게임(HTML + CSS + JS)
 ------------
 ![image](https://github.com/devpigKing/Web-Client/assets/137087678/348e85e4-e24a-4d4a-9c1d-64cb2b0ed968)
+
+
+
+------------
+
+5. 신호등 건반(HTML + CSS + JS)
+------------
+![image](https://github.com/devpigKing/Web-Client/assets/137087678/900c4335-76f6-4c68-af1d-2dc57d694698)
+
