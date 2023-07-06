@@ -8,7 +8,7 @@
             width: 70px;
             height: 70px;
             text-align: center;
-            border: solid 4px;
+            border: solid 4px black;
         }
         table {
             width: 808px;
@@ -24,7 +24,7 @@
         #list_row img {
             width: 100px;
             height: 100px;
-            border: 1px;
+            border: solid 1px black;
         }
 
         #display_row img {
@@ -68,7 +68,9 @@
 
         function slide(event) {
             const img = event.target; // 이벤트에서 타겟을 가져와 img라는 변수를 저장
+            img.style.border = "solid 2px blue";
             current_img.src = img.src;
+            imgs[current_idx].style.border = "solid 2px black";
             current_idx = parseInt(img.id);
             
         }
@@ -91,8 +93,11 @@
             if (pre_idx < 0) {
                 pre_idx = imgs.length - 1;
             }
+            imgs[current_idx].style.border = "solid 2px black";
             current_img.src = "images/slide/" + image_name[pre_idx] + ".jpg";
             current_idx = pre_idx;
+            imgs[current_idx].style.border = "solid 2px blue";
+
         }
 
         btnNext.onclick = function(event) {
@@ -100,8 +105,11 @@
             if(next_idx > imgs.length-1 ) {
                 next_idx = 0;
             }
+            img[next_idx].style.border = "solid 2px blue";
+            img[current_idx].style.border = "solid 2px black";
             current_img.src = "images/slide/" + image_name[next_idx] + ".jpg";
             current_idx = next_idx;
+
         }
 
 
